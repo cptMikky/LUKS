@@ -1,5 +1,17 @@
-Warning
+cptMikky's prologue
+-------------------
 
+Thanks guardianproject for this. 
+
+So far I've just updated the cryptsetup static binary build system to bump cryptsetup to v. 1.7.0.
+
+I do not plan update the app itself in near future (can't code android apps :) ) but since I was using the cryptsetup binary, I will maintain the "external/" part of this project, namely the static cryptsetup binary.
+
+Now it builds, it executes on Android and seems to be working. It's still alpha. You have been warned.
+
+
+Warning
+------
 **At this time, this software should be treated as alpha software and used with a grain of paranoid salt. **
 While the LUKS project itself has been put through the paces on Linux desktops and servers, we are still determining the right conditions for its secure use on Android. With the many combinations of closed hardware, proprietary basebands, multitudes of kernels, firmwares and other mods, it is fairly impossible to guarantee security for any user. That said, we feel this effort is a useful public step forward in providing an increased level of protection for file storage, and exploring the limits of what we can provide as after-market software developers building open-source tools.
 

@@ -1,3 +1,21 @@
+RELEASE NOTES
+-------------
+
+**!!! NDK level 21 required !!!**
+
+**This is a very rough update bumping cryptsetup to 1.7.0**
+
+I've also bumped other packages. Mostly to recent versions, in some cases bit older ones (namely LVM and util-linux).
+
+Older versions were necessary because newer did not compile for various reasons and I didn't have much time for debugging.
+
+Patches were reduced to absolute minimum and removed in some cases. Minor updates to make process was necessary for some packages to compile.
+
+NDK level 21 is required as latest util-linux wouldn't compile. This sadly means **no KitKat support** for the time being. This may change in the future as I believe that util-linux can be either downgraded or patched safely but I will not look into this unless someone needs it. Feel free to fork and patch, pull requests are welcome.
+
+
+
+Original README follows:
 
 To build the whole shebang, run: make.  It'll download the sources, untar
 them, patch them, and set everything up, then build everything and install it
