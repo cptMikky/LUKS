@@ -1,0 +1,41 @@
+diff -rupN util-linux-2.26.2/include/c.h util-linux-2.26.2.new/include/c.h
+--- util-linux-2.26.2/include/c.h	2015-04-29 09:52:21.958364385 +0200
++++ util-linux-2.26.2.new/include/c.h	2015-12-29 20:37:36.249773666 +0100
+@@ -245,10 +245,10 @@ static inline int dirfd(DIR *d)
+  */
+ static inline size_t get_hostname_max(void)
+ {
+-	long len = sysconf(_SC_HOST_NAME_MAX);
++/*	long len = sysconf(_SC_HOST_NAME_MAX);
+ 
+ 	if (0 < len)
+-		return len;
++		return len;*/
+ 
+ #ifdef MAXHOSTNAMELEN
+ 	return MAXHOSTNAMELEN;
+diff -rupN util-linux-2.26.2/include/ttyutils.h util-linux-2.26.2.new/include/ttyutils.h
+--- util-linux-2.26.2/include/ttyutils.h	2015-04-29 09:52:21.959364378 +0200
++++ util-linux-2.26.2.new/include/ttyutils.h	2015-12-29 21:04:41.863050836 +0100
+@@ -57,6 +57,9 @@ extern int get_terminal_name(int fd, con
+ #define UL_TTY_KEEPCFLAGS	(1 << 1)
+ #define UL_TTY_UTF8		(1 << 2)
+ 
++#define OXTABS			XTABS
++#define _POSIX_VDISABLE		CEOL
++
+ static inline void reset_virtual_console(struct termios *tp, int flags)
+ {
+ 	/* Use defaults of <sys/ttydefaults.h> for base settings */
+diff -rupN util-linux-2.26.2/sys-utils/dmesg.c util-linux-2.26.2.new/sys-utils/dmesg.c
+--- util-linux-2.26.2/sys-utils/dmesg.c	2015-04-29 12:22:43.994727383 +0200
++++ util-linux-2.26.2.new/sys-utils/dmesg.c	2015-12-30 11:11:32.394628722 +0100
+@@ -11,7 +11,7 @@
+ #include <getopt.h>
+ #include <stdlib.h>
+ #include <sys/klog.h>
+-#include <sys/syslog.h>
++#include <syslog.h>
+ #include <sys/time.h>
+ #include <sys/sysinfo.h>
+ #include <ctype.h>
